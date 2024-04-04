@@ -47,3 +47,15 @@ insert into Pack_animals (name, type, birthdate, commands) VALUES
 DELETE FROM Pack_animals WHERE type = 'Camel';
 UPDATE Pack_animals SET type = 'Horse/Donkey' WHERE type IN ('Horse', 'Donkey');
 SELECT * FROM Pack_animals;
+
+
+DROP TABLE IF EXISTS to3years;
+CREATE TABLE to3years (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL,
+    type VARCHAR(50) NOT NULL,
+    birthdate DATE NOT NULL,
+    age INT NOT NULL,
+    commands SET('Bark', 'Bray', 'Canter', 'Carry Load', 'Fetch', 'Gallop', 'Hide', 'Jump', 'Kick', 'Meow', 'Paw', 'Pounce', 'Roll', 'Run', 'Sit', 'Stay', 'Spin', 'Scratch', 'Trot', 'Walk')
+);
+SELECT * FROM to3years;
