@@ -60,8 +60,13 @@ CREATE TABLE to3years (
 );
 
 INSERT INTO to3years (name, type, birthdate, commands, age)
-SELECT name, type, birthdate, commands, ((20240404 - birthdate) / 30) AS age
+SELECT name, type, birthdate, commands, TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) AS age
 FROM Pets
+HAVING age BETWEEN 12 AND 36;
+
+INSERT INTO to3years (name, type, birthdate, commands, age)
+SELECT name, type, birthdate, commands, TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) AS age
+FROM Pack_animals
 HAVING age BETWEEN 12 AND 36;
     
 SELECT * FROM to3years;
