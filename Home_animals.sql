@@ -19,29 +19,29 @@ id INT PRIMARY KEY AUTO_INCREMENT,
 name VARCHAR(50) NOT NULL,
 type VARCHAR(50) NOT NULL,
 birthdate DATE,
-commands SET('Bark', 'Bray', 'Canter', 'Carry Load', 'Fetch', 'Gallop', 'Hide', 'Jump', 'Kick', 'Meow', 'Paw', 'Pounce', 'Roll', 'Sit', 'Stay', 'Spin', 'Scratch', 'Trot', 'Walk')
+commands SET('Bark', 'Bray', 'Canter', 'Carry Load', 'Fetch', 'Gallop', 'Hide', 'Jump', 'Kick', 'Meow', 'Paw', 'Pounce', 'Roll', 'Run', 'Sit', 'Stay', 'Spin', 'Scratch', 'Trot', 'Walk')
 );
 
 insert into Pets (name, type, birthdate, commands) VALUES
-('Fido',		'Dog', 		20200101, concat('Sit, Stay, Fetch')),
-('Whiskers',	'Cat',		20190515, 'Sit, Pounce'),
-('Hammy',		'Hamster',	20210310, 'Roll, Hide'),
-('Buddy',		'Dog',		20181210, 'Sit, Paw, Bark'),
-('Smudge',		'Cat',		20200220, 'Sit, Pounce, Scratch'),
+('Fido',		'Dog', 		20200101, 'Sit,Stay,Fetch'),
+('Whiskers',	'Cat',		20190515, 'Sit,Pounce'),
+('Hammy',		'Hamster',	20210310, 'Roll,Hide'),
+('Buddy',		'Dog',		20181210, 'Sit,Paw,Bark'),
+('Smudge',		'Cat',		20200220, 'Sit,Pounce,Scratch'),
 ('Peanut',		'Hamster',	20210801, 'Roll,Spin'),
-('Bella',		'Dog',		20191111, 'Sit, Stay, 	Roll'),
-('Oliver',		'Cat',		20200630, 'Meow, Scratch, Jump')
+('Bella',		'Dog',		20191111, 'Sit,Stay,Roll'),
+('Oliver',		'Cat',		20200630, 'Meow,Scratch,Jump')
 ;
 
 
 insert into Pack_animals (name, type, birthdate, commands) VALUES
-('Thunder',	'Horse',	20150721, 'Trot, Canter, 		Gallop'),
-('Sandy',	'Camel',	20161103, 'Walk, Carry Load'),
-('Eeyore',	'Donkey',	20170918, 'Walk, Carry Load, 	Bray'),
-('Storm',	'Horse',	20140505, 'Trot, Canter'),
-('Dune',	'Camel',	20181212, 'Walk, Sit'),
-('Burro',	'Donkey',	20190123, 'Walk, Bray, 		Kick'),
-('Blaze',	'Horse',	20160229, 'Trot, Jump, 		Gallop'),
-('Sahara',	'Camel',	20150814, 'Walk, Run');
+('Thunder',	'Horse',	20150721, 'Trot,Canter,Gallop'),
+('Sandy',	'Camel',	20161103, 'Walk,Carry Load'),
+('Eeyore',	'Donkey',	20170918, 'Walk,Carry Load,Bray'),
+('Storm',	'Horse',	20140505, 'Trot,Canter'),
+('Dune',	'Camel',	20181212, 'Walk,Sit'),
+('Burro',	'Donkey',	20190123, 'Walk,Bray,Kick'),
+('Blaze',	'Horse',	20160229, 'Trot,Jump,Gallop'),
+('Sahara',	'Camel',	20150814, 'Walk,Run');
 
 SELECT * FROM Pets;
