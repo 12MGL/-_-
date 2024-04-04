@@ -8,27 +8,29 @@ DROP TABLE IF EXISTS Pets;
 CREATE TABLE Pets (
 id INT PRIMARY KEY AUTO_INCREMENT,
 name VARCHAR(50) NOT NULL,
+type VARCHAR(50) NOT NULL,
 birthdate DATE NOT NULL,
-commands SET('command1', 'command2', 'command3', 'command4', 'command5')
+commands SET('Bark', 'Bray', 'Canter', 'Carry Load', 'Fetch', 'Gallop', 'Hide', 'Jump', 'Kick', 'Meow', 'Paw', 'Pounce', 'Roll', 'Sit', 'Stay', 'Spin', 'Scratch', 'Trot', 'Walk')
 );
 
 DROP TABLE IF EXISTS Pack_animals;
 CREATE TABLE Pack_animals (
 id INT PRIMARY KEY AUTO_INCREMENT,
 name VARCHAR(50) NOT NULL,
-birthdate DATE NOT NULL,
+type VARCHAR(50) NOT NULL,
+birthdate DATE,
 commands SET('command1', 'command2', 'command3', 'command4', 'command5')
 );
 
-insert into Pets VALUES
-('Fido',		'Dog',		'2020-01-01'),
-('Whiskers',	'Cat',		'2019-05-15'),
-('Hammy',		'Hamster',	'2021-03-10'),
-('Buddy',		'Dog',		'2018-12-10'),
-('Smudge',		'Cat',		'2020-02-20'),
-('Peanut',		'Hamster',	'2021-08-01'),
-('Bella',		'Dog',		'2019-11-11'),
-('Oliver',		'Cat',		'2020-06-30');
+insert into Pets (name, type, birthdate) VALUES
+('Fido',		'Dog', 		20200101),
+('Whiskers',	'Cat',		20190515),
+('Hammy',		'Hamster',	20210310),
+('Buddy',		'Dog',		20181210),
+('Smudge',		'Cat',		20200220),
+('Peanut',		'Hamster',	20210801),
+('Bella',		'Dog',		20191111),
+('Oliver',		'Cat',		20200630);
 
 insert into Pets (commands) VALUES
 ('Sit', 	'Stay', 	'Fetch'),
@@ -40,15 +42,15 @@ insert into Pets (commands) VALUES
 ('Sit', 	'Stay', 	'Roll'),
 ('Meow', 	'Scratch', 	'Jump');
 
-insert into Pack_animals VALUES
-('Thunder',	'Horse',	'2015-07-21'),
-('Sandy',	'Camel',	'2016-11-03'),
-('Eeyore',	'Donkey',	'2017-09-18'),
-('Storm',	'Horse',	'2014-05-05'),
-('Dune',	'Camel',	'2018-12-12'),
-('Burro',	'Donkey',	'2019-01-23'),
-('Blaze',	'Horse',	'2016-02-29'),
-('Sahara',	'Camel',	'2015-08-14');
+insert into Pack_animals (name, type, birthdate) VALUES
+('Thunder',	'Horse',	20150721),
+('Sandy',	'Camel',	20161103),
+('Eeyore',	'Donkey',	20170918),
+('Storm',	'Horse',	20140505),
+('Dune',	'Camel',	20181212),
+('Burro',	'Donkey',	20190123),
+('Blaze',	'Horse',	20160229),
+('Sahara',	'Camel',	20150814);
 
 insert into Pack_animals (commands) VALUES
 ('Trot', 'Canter', 		'Gallop'),
@@ -59,3 +61,5 @@ insert into Pack_animals (commands) VALUES
 ('Walk', 'Bray', 		'Kick'),
 ('Trot', 'Jump', 		'Gallop'),
 ('Walk', 'Run');
+
+SELECT * FROM Pets;
