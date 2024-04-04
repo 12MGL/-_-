@@ -44,4 +44,6 @@ insert into Pack_animals (name, type, birthdate, commands) VALUES
 ('Blaze',	'Horse',	20160229, 'Trot,Jump,Gallop'),
 ('Sahara',	'Camel',	20150814, 'Walk,Run');
 
-SELECT * FROM Pets;
+DELETE FROM Pack_animals WHERE type = 'Camel';
+UPDATE Pack_animals SET type = 'Horse/Donkey' WHERE type IN ('Horse', 'Donkey');
+SELECT * FROM Pack_animals;
