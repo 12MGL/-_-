@@ -22,7 +22,7 @@ birthdate DATE,
 commands SET('Bark', 'Bray', 'Canter', 'Carry Load', 'Fetch', 'Gallop', 'Hide', 'Jump', 'Kick', 'Meow', 'Paw', 'Pounce', 'Roll', 'Run', 'Sit', 'Stay', 'Spin', 'Scratch', 'Trot', 'Walk')
 );
 
-insert into Pets (name, type, birthdate, commands) VALUES
+INSERT INTO Pets (name, type, birthdate, commands) VALUES
 ('Fido',		'Dog', 		20200101, 'Sit,Stay,Fetch'),
 ('Whiskers',	'Cat',		20190515, 'Sit,Pounce'),
 ('Hammy',		'Hamster',	20210310, 'Roll,Hide'),
@@ -34,7 +34,7 @@ insert into Pets (name, type, birthdate, commands) VALUES
 ;
 
 
-insert into Pack_animals (name, type, birthdate, commands) VALUES
+INSERT INTO Pack_animals (name, type, birthdate, commands) VALUES
 ('Thunder',	'Horse',	20150721, 'Trot,Canter,Gallop'),
 ('Sandy',	'Camel',	20161103, 'Walk,Carry Load'),
 ('Eeyore',	'Donkey',	20170918, 'Walk,Carry Load,Bray'),
@@ -58,4 +58,10 @@ CREATE TABLE to3years (
     age INT NOT NULL,
     commands SET('Bark', 'Bray', 'Canter', 'Carry Load', 'Fetch', 'Gallop', 'Hide', 'Jump', 'Kick', 'Meow', 'Paw', 'Pounce', 'Roll', 'Run', 'Sit', 'Stay', 'Spin', 'Scratch', 'Trot', 'Walk')
 );
+
+INSERT INTO to3years (name, type, birthdate, commands, age)
+SELECT name, type, birthdate, commands, ((20240404 - birthdate) / 30) AS age
+FROM Pets
+HAVING age BETWEEN 12 AND 36;
+    
 SELECT * FROM to3years;
