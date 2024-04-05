@@ -22,7 +22,7 @@ public Animal(int id, String name, LocalDate birthdate, List<String> commands) {
 }
 
 public void CommandsList() {
-    // для вывода списка команд 
+    System.out.println("Список команд: " + commands);
 }
 public int age_count() {
 //дописать подсчёт возраста от текущей даты
@@ -168,9 +168,23 @@ public class AnimalList {
     }
 
     private static void newCommand(Scanner scanner) {
+        System.out.println("Введите id животного: ");
+        int scanid = scanner.nextInt();
+        For (int id = scanid) {
+            animal.displayCommands();
+            //чушь
+        }
+   
 
     }
 
     private static void ListbyDate(Scanner scanner) {
-
-    }
+        System.out.println("Введите id животного: ");
+        int scanid = scanner.nextInt();
+        System.out.println("Введите команду: ");
+        String command = scanner.next();
+        For (int id = scanid) {
+        animal.commands.add(command);
+        //чушь 2
+        }    
+}
