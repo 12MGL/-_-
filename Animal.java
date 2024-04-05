@@ -37,42 +37,42 @@ public int age_count() {
 
 class Cat extends Animal {
     public Cat (int id, String name, LocalDate dateOfBirth, List<String> commands) {
-        super(id, name, dateOfBirth, commands);
+        super(id, name, dateOfBirth, commands<>());
         this.commands.add = ("Sit");
     }
 }
 
 class Dog extends Animal {
     public Dog (int id, String name, LocalDate dateOfBirth, List<String> commands) {
-        super(id, name, dateOfBirth, commands);
+        super(id, name, dateOfBirth, commands<>());
         this.commands.add = ("Sit");
     }
 }
 
 class Hamster extends Animal {
     public Hamster (int id, String name, LocalDate dateOfBirth, List<String> commands) {
-        super(id, name, dateOfBirth, commands);
+        super(id, name, dateOfBirth, commands<>());
         this.commands.add = ("Roll");
     }
 }
 
 class Horse extends Animal {
     public Horse (int id, String name, LocalDate dateOfBirth, List<String> commands) {
-        super(id, name, dateOfBirth, commands);
+        super(id, name, dateOfBirth, commands<>());
         this.commands.add = ("Trot");
     }
 }
 
 class Donkey extends Animal {
     public Donkey (int id, String name, LocalDate dateOfBirth, List<String> commands) {
-        super(id, name, dateOfBirth, commands);
+        super(id, name, dateOfBirth, commands<>());
         this.commands.add = ("Walk");
     }
 }
 
 class Camel extends Animal {
     public Camel (int id, String name, LocalDate dateOfBirth, List<String> commands) {
-        super(id, name, dateOfBirth, commands);
+        super(id, name, dateOfBirth, commands<>());
         this.commands.add = ("Walk");
     }
 }
@@ -118,9 +118,8 @@ public class AnimalList {
         int scantype = scanner.nextInt();
         System.out.println("Введите кличку животного: ");
         String scanname = scanner.next();
-        System.out.println("Введите дату рождения животного: ");
+        System.out.println("Введите дату рождения животного в формате ГГГГ ММ ДД: ");
         LocalDate scanbirthDate = LocalDate.parse(scanner.next());
-        // дописать логику
         int newanimscanner = scanner.nextInt();
         if (newanimscanner == 1) {
             int id++;
