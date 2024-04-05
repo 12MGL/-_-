@@ -70,3 +70,14 @@ FROM Pack_animals
 HAVING age BETWEEN 12 AND 36;
     
 SELECT * FROM to3years;
+
+
+DROP TABLE IF EXISTS Animals;
+CREATE TABLE Animals AS
+SELECT 'Pets' AS class, name, type, birthdate, commands
+FROM Pets
+UNION ALL
+SELECT 'Pack_animals' AS class, name, type, birthdate, commands
+FROM Pack_animals;
+
+SELECT * FROM Animals;
