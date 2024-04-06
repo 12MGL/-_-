@@ -1,0 +1,24 @@
+   43  sudo apt update && sudo apt upgrade -y
+   44  ls
+   45  cd /Загрузки
+   46  cd Загрузки
+   47  ls
+   48  dpkg -i mysql-apt-config_0.8.29-1_all.deb 
+   49  sudo dpkg -i mysql-apt-config_0.8.29-1_all.deb 
+   50  apt-get update
+   51  sudo apt-get update
+   52  sudo apt-get install mysql-server
+   53  systemctl status mysql
+   54  ls
+   55  cat > "Домашние животные"
+   56  cat > "Вьючные животные"
+   57  cat "Домашние животные" "Вьючные животные" > "Все животные"
+   58  cat "Все животные"
+   59  mv "Все животные" "Друзья человека"
+   60  ды
+   61  ls
+   62  mkdir Животные
+   63  mv "Друзья человека" Животные
+   64  cd Животные/
+   65  ls
+   66  history
