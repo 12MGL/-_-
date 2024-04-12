@@ -10,24 +10,19 @@ class Animal {
     LocalDate dateOfBirth;
     int age;
     List<String> commands;
-}
     
 
-public Animal(int id, String name, LocalDate birthdate, List<String> commands) {
-    this.id = id;
-    this.name = name;
-    this.dateOfBirth = dateOfBirth;
-    this.age = age_count();
-    this.commands = new ArrayList<>();
-}
+    public Animal(int id, String name, LocalDate birthdate, List<String> commands) {
+        this.id = id;
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+        this.commands = commands;
+    }
 
-public void CommandsList() {
-    System.out.println("Список команд: " + commands);
+    public void CommandsList() {
+        System.out.println("Список команд: " + commands);
+    }
 }
-public int age_count() {
-//дописать подсчёт возраста от текущей даты
-}
-
 
 
     // 'Bark', 'Bray', 'Canter', 'Carry Load', 'Fetch', 'Gallop', 'Hide', 'Jump', 'Kick',
@@ -36,50 +31,52 @@ public int age_count() {
 
 
 class Cat extends Animal {
-    public Cat (int id, String name, LocalDate dateOfBirth, List<String> commands) {
-        super(id, name, dateOfBirth, commands<>());
+    public Cat (int id, String name, LocalDate dateOfBirth) {
+        super(id, name, dateOfBirth, new ArrayList<>());
         this.commands.add = ("Sit");
     }
 }
 
 class Dog extends Animal {
-    public Dog (int id, String name, LocalDate dateOfBirth, List<String> commands) {
-        super(id, name, dateOfBirth, commands<>());
+    public Dog (int id, String name, LocalDate dateOfBirth) {
+        super(id, name, dateOfBirth, new ArrayList<>());
         this.commands.add = ("Sit");
     }
 }
 
 class Hamster extends Animal {
-    public Hamster (int id, String name, LocalDate dateOfBirth, List<String> commands) {
-        super(id, name, dateOfBirth, commands<>());
+    public Hamster (int id, String name, LocalDate dateOfBirth) {
+        super(id, name, dateOfBirth, new ArrayList<>());
         this.commands.add = ("Roll");
     }
 }
 
 class Horse extends Animal {
-    public Horse (int id, String name, LocalDate dateOfBirth, List<String> commands) {
-        super(id, name, dateOfBirth, commands<>());
+    public Horse (int id, String name, LocalDate dateOfBirth) {
+        super(id, name, dateOfBirth, new ArrayList<>());
         this.commands.add = ("Trot");
     }
 }
 
 class Donkey extends Animal {
-    public Donkey (int id, String name, LocalDate dateOfBirth, List<String> commands) {
-        super(id, name, dateOfBirth, commands<>());
+    public Donkey (int id, String name, LocalDate dateOfBirth) {
+        super(id, name, dateOfBirth, new ArrayList<>());
         this.commands.add = ("Walk");
     }
 }
 
 class Camel extends Animal {
-    public Camel (int id, String name, LocalDate dateOfBirth, List<String> commands) {
-        super(id, name, dateOfBirth, commands<>());
+    public Camel (int id, String name, LocalDate dateOfBirth) {
+        super(id, name, dateOfBirth, new ArrayList<>());
         this.commands.add = ("Walk");
     }
 }
 
 public class AnimalList {
+    private static int animalCount = 0;
     private static List<Animal> animals = new ArrayList<>();
-    public void main(String[] args) {
+    
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.println("1. Добавить животное");
@@ -122,34 +119,22 @@ public class AnimalList {
         LocalDate scanbirthDate = LocalDate.parse(scanner.next());
         int newanimscanner = scanner.nextInt();
         if (newanimscanner == 1) {
-            int id++;
-            animal = new Animal(int id; String type; String name; LocalDate birthDate);
-            String type = Dog;
+            animals.add(new Dog(animalCount++, name, dateOfBirth));
         }
         else if (newanimscanner == 2) {
-            int id++;
-            animal = new Animal(int id; String type; String name; LocalDate birthDate);
-            String type = Dog;
+            animals.add(new Cat(animalCount++, name, dateOfBirth));
         }
         else if (newanimscanner == 3) {
-            int id++;
-            animal = new Animal(int id; String type; String name; LocalDate birthDate);
-            String type = Hamster;
+            animals.add(new Hamster(animalCount++, name, dateOfBirth));
         }
         else if (newanimscanner == 4) {
-            int id++;
-            animal = new Animal(int id; String type; String name; LocalDate birthDate);
-            String type = Horse;
+            animals.add(new Horse(animalCount++, name, dateOfBirth));
         }
         else if (newanimscanner == 5) {
-            int id++;
-            animal = new Animal(int id; String type; String name; LocalDate birthDate);
-            String type = Camel;
+            animals.add(new Camel(animalCount++, name, dateOfBirth));
         }
         else if (newanimscanner == 6) {
-            int id++;
-            animal = new Animal(int id; String type; String name; LocalDate birthDate);
-            String type = Donkey;
+            animals.add(new Donkey(animalCount++, name, dateOfBirth));
         }
         else return;
         }
@@ -169,12 +154,14 @@ public class AnimalList {
     private static void newCommand(Scanner scanner) {
         System.out.println("Введите id животного: ");
         int scanid = scanner.nextInt();
-        For (int id = scanid) {
-            animal.displayCommands();
-            //чушь
+        System.out.println("Введите команду: ");
+        String command = scanner.next();
+        for (Animal animal : animals) {
+            if (animal.id == id) {
+                animal.commands.add(command);
+                break;
+            }
         }
-   
-
     }
 
     private static void ListbyDate(Scanner scanner) {
